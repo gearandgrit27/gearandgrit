@@ -1,0 +1,2121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gear & Grit | Eric Bussey — TikTok Shop Creator</title>
+  <meta name="description" content="Eric Bussey (@GearAndGrit) — TikTok Shop creator and brand partner. $2M+ GMV generated. 44M+ views. Real content that drives real sales.">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ==============================
+       RESET & BASE
+    ============================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0B1B2C;
+      color: #F5EEDC;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ==============================
+       CSS VARIABLES
+    ============================== */
+    :root {
+      --navy: #0B1B2C;
+      --brass: #C9952C;
+      --brass-light: #DFB04A;
+      --cream: #F5EEDC;
+      --charcoal: #2E2E2E;
+      --mid-navy: #142236;
+      --border: rgba(201, 149, 44, 0.2);
+      --text-muted: rgba(245, 238, 220, 0.55);
+    }
+
+    /* ==============================
+       TYPOGRAPHY
+    ============================== */
+    h1, h2, h3, h4, .oswald {
+      font-family: 'Oswald', sans-serif;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+    .section-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--brass);
+      margin-bottom: 0.75rem;
+    }
+
+    /* ==============================
+       LAYOUT UTILITIES
+    ============================== */
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .section-pad {
+      padding: 96px 0;
+    }
+    .section-pad-sm {
+      padding: 64px 0;
+    }
+
+    /* ==============================
+       BUTTONS
+    ============================== */
+    .btn {
+      display: inline-block;
+      font-family: 'Oswald', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 14px 32px;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 2px solid transparent;
+    }
+    .btn-primary {
+      background: var(--brass);
+      color: var(--navy);
+      border-color: var(--brass);
+    }
+    .btn-primary:hover {
+      background: var(--brass-light);
+      border-color: var(--brass-light);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--cream);
+      border-color: rgba(245, 238, 220, 0.4);
+    }
+    .btn-outline:hover {
+      border-color: var(--brass);
+      color: var(--brass);
+    }
+    .btn-outline-brass {
+      background: transparent;
+      color: var(--brass);
+      border-color: var(--brass);
+    }
+    .btn-outline-brass:hover {
+      background: var(--brass);
+      color: var(--navy);
+    }
+    .btn-dark {
+      background: var(--navy);
+      color: var(--cream);
+      border-color: var(--navy);
+    }
+    .btn-dark:hover {
+      background: var(--charcoal);
+      border-color: var(--charcoal);
+    }
+
+    /* ==============================
+       NAVIGATION
+    ============================== */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 0 24px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(11, 27, 44, 0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 1.4rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--cream);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .nav-logo span {
+      color: var(--brass);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--text-muted);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--cream); }
+    .nav-cta { margin-left: 16px; }
+
+    /* Mobile nav */
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 5px;
+      padding: 4px;
+    }
+    .mobile-menu-btn span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--cream);
+      transition: all 0.3s;
+    }
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 70px;
+      left: 0;
+      right: 0;
+      background: var(--navy);
+      border-bottom: 1px solid var(--border);
+      padding: 24px;
+      z-index: 99;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--cream);
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .mobile-menu-btn { display: flex; }
+    }
+
+    /* ==============================
+       HERO
+    ============================== */
+    #hero {
+      padding-top: 70px;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+    }
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 80% at 70% 50%, rgba(201,149,44,0.07) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 60% at 10% 80%, rgba(201,149,44,0.05) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    /* Texture overlay */
+    #hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect width='1' height='1' fill='rgba(245,238,220,0.015)'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      width: 100%;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
+    .hero-photo-wrap {
+      position: relative;
+    }
+    .hero-photo {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: var(--mid-navy);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-height: 580px;
+    }
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+    }
+    .hero-photo-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      text-align: center;
+      padding: 20px;
+    }
+    .hero-photo-placeholder svg {
+      opacity: 0.3;
+    }
+    .hero-badge {
+      position: absolute;
+      bottom: -16px;
+      right: -16px;
+      background: var(--brass);
+      color: var(--navy);
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 10px 16px;
+      border-radius: 2px;
+    }
+    .hero-content { }
+    .hero-handle {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      color: var(--brass);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .hero-handle::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 2px;
+      background: var(--brass);
+    }
+    .hero-name {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      line-height: 0.9;
+      color: var(--cream);
+      margin-bottom: 20px;
+    }
+    .hero-name span {
+      color: var(--brass);
+      display: block;
+    }
+    .hero-tagline {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 36px;
+      max-width: 440px;
+    }
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 36px;
+      padding: 24px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+    }
+    .hero-stat {}
+    .hero-stat-num {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 1.6rem;
+      color: var(--brass);
+      line-height: 1;
+    }
+    .hero-stat-label {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 40px 24px 60px;
+      }
+      .hero-photo-wrap { order: -1; max-width: 340px; margin: 0 auto; width: 100%; }
+      .hero-photo { max-height: 400px; }
+      .hero-name { font-size: 3.2rem; }
+      .hero-stats { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .hero-stats { grid-template-columns: 1fr 1fr; }
+      .hero-stat:last-child { grid-column: 1 / -1; }
+    }
+
+    /* ==============================
+       PROOF BAR
+    ============================== */
+    #proof-bar {
+      background: var(--brass);
+      padding: 0;
+      overflow: hidden;
+    }
+    .proof-bar-inner {
+      display: flex;
+      align-items: stretch;
+    }
+    .proof-bar-item {
+      flex: 1;
+      padding: 28px 24px;
+      text-align: center;
+      border-right: 1px solid rgba(11,27,44,0.2);
+      position: relative;
+    }
+    .proof-bar-item:last-child { border-right: none; }
+    .proof-bar-num {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 2rem;
+      color: var(--navy);
+      line-height: 1;
+    }
+    .proof-bar-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(11,27,44,0.65);
+      margin-top: 4px;
+    }
+    @media (max-width: 600px) {
+      .proof-bar-inner { flex-wrap: wrap; }
+      .proof-bar-item { flex: 0 0 50%; border-bottom: 1px solid rgba(11,27,44,0.15); }
+      .proof-bar-item:nth-child(even) { border-right: none; }
+    }
+
+    /* ==============================
+       ABOUT
+    ============================== */
+    #about {
+      background: var(--mid-navy);
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .about-text h2 {
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      line-height: 1;
+      margin-bottom: 20px;
+      color: var(--cream);
+    }
+    .about-text h2 em {
+      font-style: normal;
+      color: var(--brass);
+    }
+    .about-text p {
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .about-text p strong {
+      color: var(--cream);
+      font-weight: 600;
+    }
+    .niche-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 28px;
+    }
+    .niche-tag {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      color: var(--text-muted);
+    }
+    .about-callout {
+      background: rgba(201,149,44,0.07);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--brass);
+      border-radius: 4px;
+      padding: 36px;
+    }
+    .about-callout-quote {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 600;
+      font-size: 1.5rem;
+      line-height: 1.3;
+      color: var(--cream);
+      margin-bottom: 20px;
+    }
+    .about-callout-quote em {
+      font-style: normal;
+      color: var(--brass);
+    }
+    .about-credentials {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 8px;
+    }
+    .credential {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .credential-icon {
+      width: 20px;
+      height: 20px;
+      background: var(--brass);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .credential-icon svg { width: 10px; height: 10px; }
+    .credential strong { color: var(--cream); }
+
+    @media (max-width: 860px) {
+      .about-grid { grid-template-columns: 1fr; gap: 48px; }
+    }
+
+    /* ==============================
+       TWO PATHS
+    ============================== */
+    #paths {
+      background: var(--navy);
+    }
+    .paths-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .paths-header h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--cream);
+      margin-bottom: 12px;
+    }
+    .paths-header p {
+      color: var(--text-muted);
+      max-width: 480px;
+      margin: 0 auto;
+      font-size: 0.95rem;
+    }
+    .paths-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .path-card {
+      background: var(--mid-navy);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 48px 40px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s;
+    }
+    .path-card:hover { border-color: var(--brass); }
+    .path-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--brass);
+    }
+    .path-number {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 5rem;
+      color: rgba(201,149,44,0.1);
+      line-height: 1;
+      position: absolute;
+      top: 20px;
+      right: 24px;
+    }
+    .path-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(201,149,44,0.12);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+    .path-icon svg { width: 24px; height: 24px; stroke: var(--brass); }
+    .path-card h3 {
+      font-size: 1.6rem;
+      color: var(--cream);
+      margin-bottom: 12px;
+      line-height: 1.1;
+    }
+    .path-card p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+    .path-features {
+      list-style: none;
+      margin-bottom: 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .path-features li {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .path-features li::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      background: var(--brass);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .path-features li strong { color: var(--cream); }
+    @media (max-width: 720px) {
+      .paths-grid { grid-template-columns: 1fr; }
+      .path-card { padding: 36px 28px; }
+    }
+
+    /* ==============================
+       FEATURED WORK
+    ============================== */
+    #work {
+      background: var(--charcoal);
+    }
+    .work-header {
+      text-align: center;
+      margin-bottom: 52px;
+    }
+    .work-header h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--cream);
+      margin-bottom: 12px;
+    }
+    .work-header p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+    .video-card {
+      background: rgba(0,0,0,0.3);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 4px;
+      overflow: hidden;
+      transition: transform 0.2s, border-color 0.2s;
+      cursor: pointer;
+    }
+    .video-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--brass);
+    }
+    .video-thumb {
+      aspect-ratio: 9/16;
+      background: var(--navy);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .video-thumb-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-muted);
+      font-size: 0.7rem;
+      text-align: center;
+      padding: 12px;
+    }
+    .play-btn {
+      width: 44px;
+      height: 44px;
+      background: rgba(201,149,44,0.9);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .play-btn svg { width: 18px; height: 18px; fill: var(--navy); margin-left: 2px; }
+    .video-views-badge {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(201,149,44,0.92);
+      color: var(--navy);
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      padding: 4px 10px;
+      border-radius: 2px;
+      white-space: nowrap;
+    }
+    .video-meta {
+      padding: 14px 12px;
+    }
+    .video-client {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--brass);
+      margin-bottom: 4px;
+    }
+    .video-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.95rem;
+      color: var(--cream);
+      line-height: 1.2;
+    }
+    .work-note {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-top: -20px;
+      margin-bottom: 40px;
+    }
+    /* Case study highlight */
+    .case-study {
+      background: rgba(201,149,44,0.06);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 40px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .case-study-stat {
+      text-align: center;
+      padding-right: 40px;
+      border-right: 1px solid var(--border);
+    }
+    .case-study-big {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 3.5rem;
+      color: var(--brass);
+      line-height: 1;
+    }
+    .case-study-big-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+    .case-study-content h3 {
+      font-size: 1.5rem;
+      color: var(--cream);
+      margin-bottom: 10px;
+    }
+    .case-study-content p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      max-width: 560px;
+    }
+    @media (max-width: 860px) {
+      .video-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 560px) {
+      .case-study { grid-template-columns: 1fr; gap: 24px; }
+      .case-study-stat { border-right: none; padding-right: 0; border-bottom: 1px solid var(--border); padding-bottom: 24px; }
+      .video-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* ==============================
+       CLIENTS
+    ============================== */
+    #clients {
+      background: var(--cream);
+    }
+    #clients .section-label { color: var(--brass); }
+    .clients-header {
+      text-align: center;
+      margin-bottom: 52px;
+    }
+    .clients-header h2 {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+    .clients-header p {
+      color: rgba(11,27,44,0.55);
+      font-size: 0.9rem;
+      max-width: 440px;
+      margin: 0 auto;
+    }
+    .client-logos {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+    .client-logo-card {
+      background: white;
+      border: 1px solid rgba(11,27,44,0.08);
+      border-radius: 4px;
+      padding: 28px 20px;
+      text-align: center;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .client-logo-card:hover {
+      border-color: var(--brass);
+      box-shadow: 0 4px 20px rgba(201,149,44,0.1);
+    }
+    .client-logo-name {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 0.05em;
+      color: var(--navy);
+    }
+    .client-logo-category {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(11,27,44,0.4);
+      margin-top: 4px;
+    }
+    .demo-note {
+      text-align: center;
+      font-size: 0.8rem;
+      color: rgba(11,27,44,0.4);
+      font-style: italic;
+      margin-bottom: 12px;
+    }
+    .audience-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .audience-card {
+      background: white;
+      border: 1px solid rgba(11,27,44,0.08);
+      border-radius: 4px;
+      padding: 32px;
+    }
+    .audience-card h3 {
+      font-size: 1.2rem;
+      color: var(--navy);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .audience-card h3::before {
+      content: '';
+      display: block;
+      width: 4px;
+      height: 20px;
+      background: var(--brass);
+      border-radius: 2px;
+    }
+    .demo-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(11,27,44,0.06);
+      font-size: 0.88rem;
+    }
+    .demo-row:last-child { border-bottom: none; }
+    .demo-label { color: rgba(11,27,44,0.6); }
+    .demo-value { font-weight: 700; color: var(--navy); }
+    .demo-value.highlight { color: var(--brass); }
+    .category-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .category-chip {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 6px 12px;
+      background: rgba(11,27,44,0.05);
+      border: 1px solid rgba(11,27,44,0.1);
+      border-radius: 2px;
+      color: rgba(11,27,44,0.7);
+    }
+    @media (max-width: 720px) {
+      .client-logos { grid-template-columns: repeat(2, 1fr); }
+      .audience-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ==============================
+       PRICING
+    ============================== */
+    #pricing {
+      background: var(--navy);
+    }
+    .pricing-header {
+      text-align: center;
+      margin-bottom: 52px;
+    }
+    .pricing-header h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--cream);
+      margin-bottom: 12px;
+    }
+    .pricing-header p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      max-width: 440px;
+      margin: 0 auto;
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+    .pricing-card {
+      background: var(--mid-navy);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 36px 28px;
+      position: relative;
+      transition: border-color 0.3s;
+    }
+    .pricing-card:hover { border-color: var(--brass); }
+    .pricing-card.featured {
+      border-color: var(--brass);
+      background: rgba(201,149,44,0.05);
+    }
+    .pricing-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--brass);
+      color: var(--navy);
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 20px;
+    }
+    .pricing-tier {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--cream);
+      margin-bottom: 6px;
+    }
+    .pricing-deliverable {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+    .pricing-price {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 2.4rem;
+      color: var(--brass);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .pricing-price-note {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    .pricing-divider {
+      height: 1px;
+      background: var(--border);
+      margin-bottom: 20px;
+    }
+    .pricing-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+    .pricing-features li {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      line-height: 1.4;
+    }
+    .pricing-features li::before {
+      content: '✓';
+      color: var(--brass);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .pricing-addon {
+      background: rgba(201,149,44,0.05);
+      border: 1px dashed var(--border);
+      border-radius: 4px;
+      padding: 20px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 24px;
+    }
+    .pricing-addon-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .pricing-addon-label strong { color: var(--cream); display: block; font-size: 0.9rem; margin-bottom: 2px; }
+    .pricing-addon-price {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--brass);
+    }
+    .pricing-retainer {
+      text-align: center;
+      margin-top: 32px;
+    }
+    .pricing-retainer p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+    /* Volume philosophy */
+    .volume-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+    .volume-card {
+      background: var(--mid-navy);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 36px 32px;
+      position: relative;
+    }
+    .volume-card.dim {
+      opacity: 0.6;
+    }
+    .volume-card.dim::after {
+      content: 'NOT RECOMMENDED';
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--text-muted);
+      border: 1px solid rgba(245,238,220,0.2);
+      padding: 3px 8px;
+      border-radius: 2px;
+    }
+    .volume-card.recommended::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--brass);
+      border-radius: 4px 4px 0 0;
+    }
+    .volume-card.recommended::after {
+      content: 'RECOMMENDED';
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--brass);
+      border: 1px solid rgba(201,149,44,0.4);
+      padding: 3px 8px;
+      border-radius: 2px;
+    }
+    .volume-card h3 {
+      font-size: 1.6rem;
+      color: var(--cream);
+      margin-bottom: 10px;
+    }
+    .volume-card h3 em {
+      font-style: normal;
+      color: var(--brass);
+    }
+    .volume-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .volume-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .volume-list li {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      line-height: 1.4;
+    }
+    .volume-list li.pro { color: var(--cream); }
+    .volume-list li.pro::before { content: '✓'; color: var(--brass); font-weight: 700; flex-shrink: 0; }
+    .volume-list li.con::before { content: '✗'; color: rgba(245,238,220,0.3); font-weight: 700; flex-shrink: 0; }
+    .volume-cta-box {
+      background: rgba(201,149,44,0.06);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--brass);
+      border-radius: 4px;
+      padding: 40px;
+      text-align: center;
+      margin-bottom: 0;
+    }
+    .volume-cta-box h3 {
+      font-size: 1.8rem;
+      color: var(--cream);
+      margin-bottom: 12px;
+    }
+    .volume-cta-box h3 em {
+      font-style: normal;
+      color: var(--brass);
+    }
+    .volume-cta-box p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      max-width: 520px;
+      margin: 0 auto 28px;
+      line-height: 1.7;
+    }
+    @media (max-width: 720px) {
+      .volume-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 860px) {
+      .pricing-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto 24px; }
+    }
+
+    /* ==============================
+       REV7N CTA
+    ============================== */
+    #rev7n {
+      background: var(--charcoal);
+      position: relative;
+      overflow: hidden;
+    }
+    #rev7n::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 80% at 100% 50%, rgba(201,149,44,0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .rev7n-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .rev7n-content { }
+    .rev7n-content h2 {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      color: var(--cream);
+      margin-bottom: 16px;
+      line-height: 1.05;
+    }
+    .rev7n-content h2 em {
+      font-style: normal;
+      color: var(--brass);
+    }
+    .rev7n-content p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .rev7n-features {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 28px 0 36px;
+    }
+    .rev7n-feature {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.88rem;
+      color: var(--cream);
+    }
+    .rev7n-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--brass);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .rev7n-logo-side {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      text-align: center;
+    }
+    .rev7n-logo-box {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 48px;
+      width: 100%;
+    }
+    .rev7n-logo-box img {
+      max-width: 180px;
+      width: 100%;
+      height: auto;
+    }
+    .rev7n-tagline-text {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    @media (max-width: 860px) {
+      .rev7n-inner { grid-template-columns: 1fr; gap: 40px; }
+      .rev7n-logo-side { order: -1; }
+      .rev7n-logo-box { padding: 32px; max-width: 280px; margin: 0 auto; }
+    }
+
+    /* ==============================
+       CONTACT
+    ============================== */
+    #contact {
+      background: var(--mid-navy);
+    }
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .contact-info h2 {
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      color: var(--cream);
+      margin-bottom: 16px;
+    }
+    .contact-info p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(201,149,44,0.1);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-icon svg { width: 18px; height: 18px; stroke: var(--brass); }
+    .contact-detail-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .contact-detail-value {
+      font-size: 0.92rem;
+      color: var(--cream);
+      text-decoration: none;
+    }
+    .contact-detail-value:hover { color: var(--brass); }
+    /* Form */
+    .contact-form {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 40px;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .form-group label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(245,238,220,0.12);
+      border-radius: 2px;
+      padding: 12px 16px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: var(--cream);
+      outline: none;
+      transition: border-color 0.2s;
+      width: 100%;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: rgba(245,238,220,0.25);
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--brass);
+    }
+    .form-group select option { background: var(--navy); }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-submit { width: 100%; margin-top: 8px; text-align: center; border: none; cursor: pointer; font-size: 1rem; }
+    @media (max-width: 860px) {
+      .contact-inner { grid-template-columns: 1fr; gap: 48px; }
+      .contact-form { padding: 28px 20px; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+
+    /* ==============================
+       FOOTER
+    ============================== */
+    footer {
+      background: var(--navy);
+      border-top: 1px solid var(--border);
+      padding: 32px 0;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-logo {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 0.12em;
+      color: var(--cream);
+      text-decoration: none;
+    }
+    .footer-logo span { color: var(--brass); }
+    .footer-copy {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+    .footer-links a {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+    }
+    .footer-links a:hover { color: var(--brass); }
+
+    /* ==============================
+       DIVIDER RULE
+    ============================== */
+    .brass-rule {
+      display: block;
+      width: 48px;
+      height: 3px;
+      background: var(--brass);
+      margin-bottom: 24px;
+      border-radius: 2px;
+    }
+
+    /* ==============================
+       SCROLL REVEAL ANIMATION
+    ============================== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+<!-- ==============================
+     NAVIGATION
+============================== -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">GEAR <span>&</span> GRIT</a>
+  <ul class="nav-links">
+    <li><a href="#work">My Work</a></li>
+    <li><a href="#pricing">How I Work</a></li>
+    <li><a href="#clients">Brands</a></li>
+    <li><a href="#rev7n">Agency</a></li>
+    <li class="nav-cta"><a href="#contact" class="btn btn-primary">Partner With Me</a></li>
+  </ul>
+  <button class="mobile-menu-btn" id="menuBtn" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <a href="#work" onclick="closeMobileNav()">My Work</a>
+  <a href="#pricing" onclick="closeMobileNav()">Packages</a>
+  <a href="#clients" onclick="closeMobileNav()">Brands</a>
+  <a href="#rev7n" onclick="closeMobileNav()">Agency</a>
+  <a href="#contact" class="btn btn-primary" style="text-align:center;margin-top:8px;" onclick="closeMobileNav()">Partner With Me</a>
+</div>
+
+<!-- ==============================
+     HERO
+============================== -->
+<section id="hero">
+  <div class="hero-inner">
+    <!-- Photo -->
+    <div class="hero-photo-wrap reveal">
+      <div class="hero-photo">
+        <img src="41913B92-C381-4630-8489-70F512EDB79D.jpg" alt="Eric Bussey — Gear & Grit">
+      </div>
+      <div class="hero-badge">@GearAndGrit · TikTok</div>
+    </div>
+
+    <!-- Content -->
+    <div class="hero-content reveal" style="transition-delay:0.1s">
+      <div class="hero-handle">@GearAndGrit</div>
+      <h1 class="hero-name">
+        GEAR
+        <span>&amp; GRIT</span>
+      </h1>
+      <p class="hero-tagline">
+        I'm Eric Bussey — a 40+ TikTok Shop creator with over a decade in e-commerce and marketing. I create content that doesn't just get views. It moves product.
+      </p>
+
+      <!-- Stats -->
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-num">$2M+</div>
+          <div class="hero-stat-label">GMV Generated</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">44M+</div>
+          <div class="hero-stat-label">Total Views</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">35K+</div>
+          <div class="hero-stat-label">Followers</div>
+        </div>
+      </div>
+
+      <!-- CTAs -->
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-primary">Partner With Me</a>
+        <a href="#rev7n" class="btn btn-outline">Scale On TikTok Shop →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==============================
+     PROOF BAR
+============================== -->
+<div id="proof-bar">
+  <div class="proof-bar-inner">
+    <div class="proof-bar-item">
+      <div class="proof-bar-num">$2,000,000+</div>
+      <div class="proof-bar-label">GMV Generated</div>
+    </div>
+    <div class="proof-bar-item">
+      <div class="proof-bar-num">44M+</div>
+      <div class="proof-bar-label">Total Views</div>
+    </div>
+    <div class="proof-bar-item">
+      <div class="proof-bar-num">60%+</div>
+      <div class="proof-bar-label">Male 35+ Audience</div>
+    </div>
+    <div class="proof-bar-item">
+      <div class="proof-bar-num">135K+</div>
+      <div class="proof-bar-label">Units Sold — One Product</div>
+    </div>
+  </div>
+</div>
+
+<!-- ==============================
+     ABOUT
+============================== -->
+<section id="about" class="section-pad">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <div class="section-label">About Eric</div>
+        <span class="brass-rule"></span>
+        <h2>MY AGE IS MY<br><em>SUPERPOWER.</em></h2>
+        <p>
+          Most creators are chasing trends. I'm out here <strong>actually using the gear</strong> — on trails, in the workshop, around the house. My audience trusts me because they know I won't put my name behind something I don't believe in.
+        </p>
+        <p>
+          I spent over a decade in e-commerce and direct response marketing before TikTok Shop existed. I understand <strong>what makes people buy</strong> — not just watch. Every video I make is built around strong hooks, clear messaging, and real-world use that keeps people watching all the way to the cart.
+        </p>
+        <p>
+          My 35+ male audience isn't scrolling for entertainment. <strong>They're researching purchases.</strong> They have buying intent. And they trust a guy who actually looks like them.
+        </p>
+        <div class="niche-tags">
+          <span class="niche-tag">Tools</span>
+          <span class="niche-tag">Outdoors</span>
+          <span class="niche-tag">Home</span>
+          <span class="niche-tag">Mountain Biking</span>
+          <span class="niche-tag">Fitness & Recovery</span>
+          <span class="niche-tag">Camping</span>
+          <span class="niche-tag">Trucks</span>
+          <span class="niche-tag">EDC</span>
+          <span class="niche-tag">Workshop Gear</span>
+          <span class="niche-tag">Power Stations</span>
+          <span class="niche-tag">Family Life</span>
+        </div>
+      </div>
+      <div class="about-callout reveal" style="transition-delay:0.15s">
+        <div class="about-callout-quote">
+          "Content that <em>helps products sell</em> — not just get views."
+        </div>
+        <div class="about-credentials">
+          <div class="credential">
+            <div class="credential-icon">
+              <svg viewBox="0 0 10 10" fill="none" stroke="white" stroke-width="1.5"><polyline points="1,5 4,8 9,2"/></svg>
+            </div>
+            <div><strong>10+ years in e-commerce & direct response</strong> — I understand conversion, not just content.</div>
+          </div>
+          <div class="credential">
+            <div class="credential-icon">
+              <svg viewBox="0 0 10 10" fill="none" stroke="white" stroke-width="1.5"><polyline points="1,5 4,8 9,2"/></svg>
+            </div>
+            <div><strong>40+ creator in a saturated space</strong> — my demographic is underserved and over-indexed for purchasing intent.</div>
+          </div>
+          <div class="credential">
+            <div class="credential-icon">
+              <svg viewBox="0 0 10 10" fill="none" stroke="white" stroke-width="1.5"><polyline points="1,5 4,8 9,2"/></svg>
+            </div>
+            <div><strong>Coach & manage creator teams</strong> — I don't just make content; I build creator ecosystems for brands.</div>
+          </div>
+          <div class="credential">
+            <div class="credential-icon">
+              <svg viewBox="0 0 10 10" fill="none" stroke="white" stroke-width="1.5"><polyline points="1,5 4,8 9,2"/></svg>
+            </div>
+            <div><strong>Real products, real use</strong> — no scripts, no forced vibes. My audience can tell the difference.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==============================
+     TWO PATHS
+============================== -->
+<section id="paths" class="section-pad">
+  <div class="container">
+    <div class="paths-header reveal">
+      <div class="section-label">How We Work Together</div>
+      <h2>TWO WAYS TO<br>PARTNER WITH ME</h2>
+      <p>Whether you need a creator for your next drop or you're ready to build a full TikTok Shop machine — there's a path for you.</p>
+    </div>
+    <div class="paths-grid">
+      <!-- Path 1 -->
+      <div class="path-card reveal">
+        <div class="path-number">01</div>
+        <div class="path-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+          </svg>
+        </div>
+        <h3>WORK WITH ME<br>AS A CREATOR</h3>
+        <p>You've got a product. I'll create authentic, conversion-driven short-form videos and post them to my TikTok audience — or hand them over for your ads.</p>
+        <ul class="path-features">
+          <li><strong>UGC Video Packages</strong> — single, 3-pack, or 6-pack</li>
+          <li><strong>TikTok Shop Affiliate</strong> — product links, commission + flat fee</li>
+          <li><strong>Spark Ads Content</strong> — license-ready for your paid campaigns</li>
+          <li><strong>Product Demos & Proof Videos</strong></li>
+          <li><strong>Whitelisting</strong> — run ads from my handle</li>
+          <li><strong>Launch Content Packages</strong></li>
+        </ul>
+        <a href="#pricing" class="btn btn-primary">How I Work With Brands</a>
+      </div>
+      <!-- Path 2 -->
+      <div class="path-card reveal" style="transition-delay:0.1s">
+        <div class="path-number">02</div>
+        <div class="path-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <h3>SCALE YOUR<br>TIKTOK SHOP</h3>
+        <p>Need more than one creator? Looking to build a real presence on TikTok Shop? My agency, Rev7n, works with brands to build and scale creator ecosystems — from zero to consistent revenue.</p>
+        <ul class="path-features">
+          <li><strong>TikTok Shop Launch Strategy</strong></li>
+          <li><strong>Affiliate Creator Recruitment</strong></li>
+          <li><strong>Content & Campaign Systems</strong></li>
+          <li><strong>Creator Management</strong></li>
+          <li><strong>Performance Tracking</strong></li>
+          <li><strong>White-Glove Brand Onboarding</strong></li>
+        </ul>
+        <a href="#rev7n" class="btn btn-outline-brass">Learn About Rev7n →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==============================
+     FEATURED WORK
+============================== -->
+<section id="work" class="section-pad">
+  <div class="container">
+    <div class="work-header reveal">
+      <div class="section-label">Featured Work</div>
+      <h2>CONTENT THAT<br>DRIVES SALES</h2>
+      <p>Real videos. Real numbers. Built on strong hooks, clear messaging, and content that feels native — not advertised.</p>
+    </div>
+
+    <div class="video-grid reveal" style="transition-delay:0.1s">
+      <!-- Video 1 -->
+      <div class="video-card">
+        <div class="video-thumb">
+          <div class="video-thumb-placeholder">
+            <div class="play-btn">
+              <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+            <div style="font-size:0.65rem;color:rgba(245,238,220,0.3);margin-top:8px;">Add TikTok embed</div>
+          </div>
+          <div class="video-views-badge">16.3M Views</div>
+        </div>
+        <div class="video-meta">
+          <div class="video-client">Viral</div>
+          <div class="video-title">Top Performing Video</div>
+        </div>
+      </div>
+      <!-- Video 2 -->
+      <div class="video-card">
+        <div class="video-thumb">
+          <div class="video-thumb-placeholder">
+            <div class="play-btn">
+              <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+            <div style="font-size:0.65rem;color:rgba(245,238,220,0.3);margin-top:8px;">Add TikTok embed</div>
+          </div>
+          <div class="video-views-badge">11.4M Views</div>
+        </div>
+        <div class="video-meta">
+          <div class="video-client">Viral</div>
+          <div class="video-title">Featured Content</div>
+        </div>
+      </div>
+      <!-- Video 3 -->
+      <div class="video-card">
+        <div class="video-thumb">
+          <div class="video-thumb-placeholder">
+            <div class="play-btn">
+              <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+            <div style="font-size:0.65rem;color:rgba(245,238,220,0.3);margin-top:8px;">Add TikTok embed</div>
+          </div>
+          <div class="video-views-badge">5.3M Views</div>
+        </div>
+        <div class="video-meta">
+          <div class="video-client">FossiBot</div>
+          <div class="video-title">Indestructible Phone Test</div>
+        </div>
+      </div>
+      <!-- Video 4 -->
+      <div class="video-card">
+        <div class="video-thumb">
+          <div class="video-thumb-placeholder">
+            <div class="play-btn">
+              <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+            <div style="font-size:0.65rem;color:rgba(245,238,220,0.3);margin-top:8px;">Add TikTok embed</div>
+          </div>
+          <div class="video-views-badge">530K Views</div>
+        </div>
+        <div class="video-meta">
+          <div class="video-client">True Classic</div>
+          <div class="video-title">T-Shirt Pack Review</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="work-note reveal">* Add your TikTok video links to replace the placeholders above.</p>
+
+    <!-- Case Study -->
+    <div class="case-study reveal">
+      <div class="case-study-stat">
+        <div class="case-study-big">135K+</div>
+        <div class="case-study-big-label">Units Sold<br>TikTok Shop</div>
+      </div>
+      <div class="case-study-content">
+        <div class="section-label">Case Study</div>
+        <h3>ERGONOMIC PILLOW — FROM LAUNCH TO 135,000 UNITS</h3>
+        <p>
+          A single product needed a creator who could speak to their core audience: adults who actually sleep and actually hurt. I made a video that felt like a trusted recommendation from a guy who tried it — not a sponsored post. It helped kick off over 135,000 units sold on TikTok Shop. I now coach and manage a creator team for the brand.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==============================
+     CLIENTS & AUDIENCE
+============================== -->
+<section id="clients" class="section-pad">
+  <div class="container">
+    <div class="clients-header reveal">
+      <div class="section-label" style="color:var(--brass)">Brands & Audience</div>
+      <h2 style="color:var(--navy)">BRANDS I'VE<br>PARTNERED WITH</h2>
+      <p>From scrappy launches to established brands — I've driven sales across tools, fitness, tech, apparel, and more.</p>
+    </div>
+
+    <div class="client-logos reveal">
+      <div class="client-logo-card">
+        <div class="client-logo-name">TRUE CLASSIC</div>
+        <div class="client-logo-category">Apparel</div>
+      </div>
+      <div class="client-logo-card">
+        <div class="client-logo-name">FOSSIBOT</div>
+        <div class="client-logo-category">Consumer Tech</div>
+      </div>
+      <div class="client-logo-card">
+        <div class="client-logo-name">CASED</div>
+        <div class="client-logo-category">Mountain Biking</div>
+      </div>
+      <div class="client-logo-card">
+        <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:1.1rem;color:var(--navy)">YOUR BRAND</div>
+        <div class="client-logo-category">Could Be Next</div>
+      </div>
+    </div>
+
+    <div class="audience-grid reveal" style="transition-delay:0.1s">
+      <div class="audience-card">
+        <h3 style="color:var(--navy)">Audience Demographics</h3>
+        <div class="demo-row">
+          <span class="demo-label">Primary Gender</span>
+          <span class="demo-value highlight">60%+ Male</span>
+        </div>
+        <div class="demo-row">
+          <span class="demo-label">Primary Age Range</span>
+          <span class="demo-value highlight">35–54</span>
+        </div>
+        <div class="demo-row">
+          <span class="demo-label">Location</span>
+          <span class="demo-value">Primarily US</span>
+        </div>
+        <div class="demo-row">
+          <span class="demo-label">Followers</span>
+          <span class="demo-value">35K+ (Growing)</span>
+        </div>
+        <div class="demo-row">
+          <span class="demo-label">Views (Last 12 Months)</span>
+          <span class="demo-value">19M+</span>
+        </div>
+        <div class="demo-row">
+          <span class="demo-label">Lifetime Views</span>
+          <span class="demo-value">44M+</span>
+        </div>
+      </div>
+      <div class="audience-card">
+        <h3 style="color:var(--navy)">Product Categories That Perform</h3>
+        <div class="category-wrap">
+          <span class="category-chip">Tools</span>
+          <span class="category-chip">Outdoor Gear</span>
+          <span class="category-chip">Home Improvement</span>
+          <span class="category-chip">Mountain Biking</span>
+          <span class="category-chip">Fitness & Recovery</span>
+          <span class="category-chip">Power Stations</span>
+          <span class="category-chip">Camping</span>
+          <span class="category-chip">Trucks & Auto</span>
+          <span class="category-chip">EDC</span>
+          <span class="category-chip">Workshop</span>
+          <span class="category-chip">Sports</span>
+          <span class="category-chip">Family Products</span>
+          <span class="category-chip">Consumer Tech</span>
+          <span class="category-chip">Apparel</span>
+        </div>
+        <div style="margin-top:20px;padding-top:20px;border-top:1px solid rgba(11,27,44,0.08)">
+          <div class="demo-row">
+            <span class="demo-label">Buying Intent</span>
+            <span class="demo-value highlight">High</span>
+          </div>
+          <div class="demo-row">
+            <span class="demo-label">Audience Trust Level</span>
+            <span class="demo-value highlight">Very High</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==============================
+     PACKAGES / PHILOSOPHY
+============================== -->
+<section id="pricing" class="section-pad">
+  <div class="container">
+    <div class="pricing-header reveal">
+      <div class="section-label">How I Work With Brands</div>
+      <h2>VOLUME IS WHERE<br>THE MAGIC HAPPENS.</h2>
+      <p>I'll be straight with you: 1–3 videos won't move the needle. Here's why I only take on brands ready to actually win.</p>
+    </div>
+
+    <div class="volume-grid reveal" style="transition-delay:0.1s">
+      <!-- Low volume card -->
+      <div class="volume-card dim">
+        <h3>1–3 Videos</h3>
+        <p>Most creators will take your money, post a few videos, and call it done. But TikTok doesn't work that way — and neither do I.</p>
+        <ul class="volume-list">
+          <li class="con">Not enough data to know what's working</li>
+          <li class="con">One angle, one shot — no room to iterate</li>
+          <li class="con">Algorithm barely registers you as a signal</li>
+          <li class="con">No time to find the hook that goes viral</li>
+          <li class="con">Brands walk away thinking "TikTok doesn't work"</li>
+        </ul>
+      </div>
+
+      <!-- High volume card -->
+      <div class="volume-card recommended">
+        <h3>10–20 <em>Videos</em></h3>
+        <p>This is where brands actually break through. More volume means more angles, more hooks, more chances to find the one that pops — and when it does, everything else amplifies.</p>
+        <ul class="volume-list">
+          <li class="pro">Test multiple hooks until one cracks</li>
+          <li class="pro">Iterate on what the data tells us</li>
+          <li class="pro">Build real signal with the TikTok algorithm</li>
+          <li class="pro">Diverse angles: demo, lifestyle, proof, story</li>
+          <li class="pro">One viral video can pay for the entire package</li>
+          <li class="pro">Compound effect — videos keep working over time</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CTA box -->
+    <div class="volume-cta-box reveal" style="transition-delay:0.2s">
+      <div class="section-label" style="justify-content:center;display:flex">Let's Build Something Real</div>
+      <h3>READY TO ACTUALLY<br><em>MOVE THE NEEDLE?</em></h3>
+      <p>
+        I work with brands who are serious about TikTok Shop — not just testing the waters. Tell me about your product and your goals, and I'll put together a custom package built around what it actually takes to win.
+      </p>
+      <a href="#contact" class="btn btn-primary">Let's Talk →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ==============================
+     REV7N CTA
+============================== -->
+<section id="rev7n" class="section-pad">
+  <div class="container">
+    <div class="rev7n-inner">
+      <div class="rev7n-content reveal">
+        <div class="section-label">TikTok Shop Agency</div>
+        <span class="brass-rule"></span>
+        <h2>READY TO BUILD A<br><em>REAL TIKTOK SHOP</em><br>PRESENCE?</h2>
+        <p>
+          Partnering with me as a creator is one thing. But if you're serious about scaling on TikTok Shop — building affiliate systems, recruiting the right creators, and running consistent campaigns — that's what Rev7n is built for.
+        </p>
+        <p>
+          Rev7n is my agency. We've helped brands go from zero TikTok presence to consistent shop revenue through white-glove strategy, creator recruitment, and content systems built around what actually works.
+        </p>
+        <div class="rev7n-features">
+          <div class="rev7n-feature">
+            <div class="rev7n-dot"></div>
+            TikTok Shop launch strategy & setup
+          </div>
+          <div class="rev7n-feature">
+            <div class="rev7n-dot"></div>
+            Affiliate creator recruitment & management
+          </div>
+          <div class="rev7n-feature">
+            <div class="rev7n-dot"></div>
+            Content & campaign systems that scale
+          </div>
+          <div class="rev7n-feature">
+            <div class="rev7n-dot"></div>
+            Built by people who operate inside TikTok Shop daily
+          </div>
+        </div>
+        <a href="https://rev7n.com" class="btn btn-primary">Visit Rev7n →</a>
+      </div>
+      <div class="rev7n-logo-side reveal" style="transition-delay:0.15s">
+        <div class="rev7n-logo-box">
+          <img src="38e656d0-9e46-4e2b-bcbb-ef8ed98ff160.png" alt="Rev7n Agency">
+        </div>
+        <div class="rev7n-tagline-text">White-Glove TikTok Shop Growth</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==============================
+     CONTACT
+============================== -->
+<section id="contact" class="section-pad">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="contact-info reveal">
+        <div class="section-label">Get In Touch</div>
+        <span class="brass-rule"></span>
+        <h2>LET'S BUILD<br>SOMETHING THAT<br>SELLS.</h2>
+        <p>
+          Ready to get your product in front of 35K+ real buyers? Tell me about your brand and what you're looking to do — I'll get back to you within 24 hours.
+        </p>
+        <div class="contact-details">
+          <div class="contact-detail">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </div>
+            <div>
+              <div class="contact-detail-label">Email</div>
+              <a href="mailto:gearandgrit27@gmail.com" class="contact-detail-value">gearandgrit27@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.77 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 17z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="contact-detail-label">Phone / WhatsApp</div>
+              <a href="tel:+16782459930" class="contact-detail-value">(678) 245-9930</a>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 2H3v16h5l3 3 3-3h7V2z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="contact-detail-label">TikTok</div>
+              <a href="https://tiktok.com/@gearandgrit" target="_blank" class="contact-detail-value">@GearAndGrit</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="contact-form reveal" style="transition-delay:0.15s">
+        <form action="https://formspree.io/f/mpqbjlvo" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" name="first_name" placeholder="John">
+            </div>
+            <div class="form-group">
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" name="last_name" placeholder="Smith">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="john@yourbrand.com">
+          </div>
+          <div class="form-group">
+            <label for="brand">Brand / Company</label>
+            <input type="text" id="brand" name="brand" placeholder="Your Brand Name">
+          </div>
+          <div class="form-group">
+            <label for="interest">I'm Interested In</label>
+            <select id="interest" name="interest">
+              <option value="" disabled selected>Select an option</option>
+              <option value="ugc">UGC Video Package</option>
+              <option value="affiliate">TikTok Shop Affiliate</option>
+              <option value="spark">Spark Ads / Whitelisting</option>
+              <option value="retainer">Retainer / Ongoing Content</option>
+              <option value="agency">Rev7n Agency Services</option>
+              <option value="other">Something Else</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Tell Me About Your Product</label>
+            <textarea id="message" name="message" placeholder="What are you selling? What's your goal? Any timeline or budget in mind?"></textarea>
+          </div>
+          <input type="text" name="_gotcha" style="display:none">
+          <button type="submit" class="btn btn-primary form-submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==============================
+     FOOTER
+============================== -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <a href="#" class="footer-logo">GEAR <span>&</span> GRIT</a>
+      <div class="footer-copy">© 2026 Eric Bussey / Gear & Grit. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="https://rev7n.com">Rev7n Agency</a>
+        <a href="mailto:gearandgrit27@gmail.com">Contact</a>
+        <a href="https://tiktok.com/@gearandgrit" target="_blank">TikTok</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ==============================
+     JAVASCRIPT
+============================== -->
+<script>
+  // Mobile nav toggle
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileNav = document.getElementById('mobileNav');
+  menuBtn.addEventListener('click', () => {
+    mobileNav.classList.toggle('open');
+  });
+  function closeMobileNav() {
+    mobileNav.classList.remove('open');
+  }
+  // Close mobile nav on outside click
+  document.addEventListener('click', (e) => {
+    if (!menuBtn.contains(e.target) && !mobileNav.contains(e.target)) {
+      mobileNav.classList.remove('open');
+    }
+  });
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Navbar scroll effect
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) {
+      navbar.style.borderBottomColor = 'rgba(201,149,44,0.3)';
+    } else {
+      navbar.style.borderBottomColor = 'rgba(201,149,44,0.2)';
+    }
+  });
+</script>
+</body>
+</html>
