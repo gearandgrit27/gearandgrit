@@ -668,8 +668,8 @@
     }
     .video-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
       margin-bottom: 48px;
     }
     .video-card {
@@ -796,13 +796,39 @@
       max-width: 560px;
     }
     @media (max-width: 860px) {
-      .video-grid { grid-template-columns: repeat(2, 1fr); }
+      .video-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 560px) {
       .case-study { grid-template-columns: 1fr; gap: 24px; }
       .case-study-stat { border-right: none; padding-right: 0; border-bottom: 1px solid var(--border); padding-bottom: 24px; }
-      .video-grid { grid-template-columns: repeat(2, 1fr); }
     }
+    .video-embed-wrap {
+      background: var(--navy);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      padding: 16px 16px 0;
+    }
+    .video-embed-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .video-embed-client {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--brass);
+    }
+    .video-embed-views {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--cream);
+    }
+    .tiktok-embed { margin: 0 auto !important; }
 
     /* ==============================
        CLIENTS
@@ -1688,73 +1714,47 @@
     </div>
 
     <div class="video-grid reveal" style="transition-delay:0.1s">
-      <!-- Video 1 -->
-      <div class="video-card">
-        <div class="video-thumb">
-          <div class="video-thumb-placeholder">
-            <div class="play-btn">
-              <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-            </div>
-            <div style="font-size:0.65rem;color:rgba(245,238,220,0.3);margin-top:8px;">Add TikTok embed</div>
-          </div>
-          <div class="video-views-badge">16.3M Views</div>
+      <!-- Video 1: 16.3M views -->
+      <div class="video-embed-wrap">
+        <div class="video-embed-label">
+          <span class="video-embed-client">@GearAndGrit</span>
+          <span class="video-embed-views">16.3M Views</span>
         </div>
-        <div class="video-meta">
-          <div class="video-client">Viral</div>
-          <div class="video-title">Top Performing Video</div>
-        </div>
+        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@gearandgrit/video/7395599382638234922" data-video-id="7395599382638234922">
+          <section></section>
+        </blockquote>
       </div>
-      <!-- Video 2 -->
-      <div class="video-card">
-        <div class="video-thumb">
-          <div class="video-thumb-placeholder">
-            <div class="play-btn">
-              <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-            </div>
-            <div style="font-size:0.65rem;color:rgba(245,238,220,0.3);margin-top:8px;">Add TikTok embed</div>
-          </div>
-          <div class="video-views-badge">11.4M Views</div>
+      <!-- Video 2: 11.4M views -->
+      <div class="video-embed-wrap">
+        <div class="video-embed-label">
+          <span class="video-embed-client">@GearAndGrit</span>
+          <span class="video-embed-views">11.4M Views</span>
         </div>
-        <div class="video-meta">
-          <div class="video-client">Viral</div>
-          <div class="video-title">Featured Content</div>
-        </div>
+        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@gearandgrit/video/7400469424005778731" data-video-id="7400469424005778731">
+          <section></section>
+        </blockquote>
       </div>
-      <!-- Video 3 -->
-      <div class="video-card">
-        <div class="video-thumb">
-          <div class="video-thumb-placeholder">
-            <div class="play-btn">
-              <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-            </div>
-            <div style="font-size:0.65rem;color:rgba(245,238,220,0.3);margin-top:8px;">Add TikTok embed</div>
-          </div>
-          <div class="video-views-badge">5.3M Views</div>
+      <!-- Video 3: Roach Video -->
+      <div class="video-embed-wrap">
+        <div class="video-embed-label">
+          <span class="video-embed-client">@GearAndGrit</span>
+          <span class="video-embed-views">Featured</span>
         </div>
-        <div class="video-meta">
-          <div class="video-client">FossiBot</div>
-          <div class="video-title">Indestructible Phone Test</div>
-        </div>
+        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@gearandgrit/video/7594879638732623159" data-video-id="7594879638732623159">
+          <section></section>
+        </blockquote>
       </div>
-      <!-- Video 4 -->
-      <div class="video-card">
-        <div class="video-thumb">
-          <div class="video-thumb-placeholder">
-            <div class="play-btn">
-              <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-            </div>
-            <div style="font-size:0.65rem;color:rgba(245,238,220,0.3);margin-top:8px;">Add TikTok embed</div>
-          </div>
-          <div class="video-views-badge">530K Views</div>
+      <!-- Video 4: FossiBot -->
+      <div class="video-embed-wrap">
+        <div class="video-embed-label">
+          <span class="video-embed-client">FossiBot</span>
+          <span class="video-embed-views">5.3M Views</span>
         </div>
-        <div class="video-meta">
-          <div class="video-client">True Classic</div>
-          <div class="video-title">T-Shirt Pack Review</div>
-        </div>
+        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@gearandgrit/video/7479451044938796331" data-video-id="7479451044938796331">
+          <section></section>
+        </blockquote>
       </div>
     </div>
-
-    <p class="work-note reveal">* Add your TikTok video links to replace the placeholders above.</p>
 
     <!-- Case Study -->
     <div class="case-study reveal">
@@ -2038,7 +2038,6 @@
             <select id="interest" name="interest">
               <option value="" disabled selected>Select an option</option>
               <option value="ugc">UGC Video Package</option>
-              <option value="affiliate">TikTok Shop Affiliate</option>
               <option value="spark">Spark Ads / Whitelisting</option>
               <option value="retainer">Retainer / Ongoing Content</option>
               <option value="agency">Rev7n Agency Services</option>
@@ -2117,5 +2116,6 @@
     }
   });
 </script>
+  <script async src="https://www.tiktok.com/embed.js"></script>
 </body>
 </html>
