@@ -23,6 +23,9 @@
     .card p { font-size: 0.95rem; color: var(--text-muted); }
     .btn { display: block; text-align: center; background: var(--brass); color: var(--navy); text-decoration: none; border-radius: 6px; padding: 15px; font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 1.05rem; letter-spacing: 0.08em; text-transform: uppercase; transition: background 0.2s; }
     .btn:hover { background: var(--brass-light); }
+    .thumb { position: relative; display: block; border-radius: 6px; overflow: hidden; }
+    .thumb img { display: block; width: 100%; height: auto; }
+    .play { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 68px; height: 68px; border-radius: 50%; background: rgba(11,27,44,0.8); border: 2px solid var(--brass); display: flex; align-items: center; justify-content: center; }
     .spacer { flex-grow: 1; }
     .more { text-align: center; color: var(--brass); font-weight: 600; font-size: 0.92rem; text-decoration: none; }
   </style>
@@ -48,8 +51,11 @@
   <div class="card">
     <h2>While you wait</h2>
     <p>Watch where I'd put the bait first. It's the step most people get wrong.</p>
-    <!-- Swap this link for your "where to put roach bait" TikTok video once it's posted -->
-    <a href="https://www.tiktok.com/@gearandgrit" class="btn">Watch on TikTok →</a>
+    <a href="https://www.tiktok.com/t/ZPNS47bsR/" class="thumb" aria-label="Watch the roach bait video on TikTok">
+      <img src="/roaches/thanks/bait-video.jpg" alt="Eric holding a tube of cockroach gel bait" width="600" height="750">
+      <span class="play"><svg width="26" height="26" viewBox="0 0 24 24" fill="#C9952C" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+    </a>
+    <a href="https://www.tiktok.com/t/ZPNS47bsR/" class="btn">Watch on TikTok →</a>
   </div>
 
   <div class="spacer"></div>
