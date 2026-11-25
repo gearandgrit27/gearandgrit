@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Roach Plan — Free Guide | Gear &amp; Grit</title>
+  <meta name="description" content="Free guide: what 7 years of apartment pest control taught me about getting rid of roaches for good.">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0B1B2C; --mid-navy: #142236; --brass: #C9952C; --brass-light: #DFB04A;
+      --cream: #F5EEDC; --border: rgba(201,149,44,0.2); --text-muted: rgba(245,238,220,0.7);
+    }
+    body { font-family: 'Inter', sans-serif; background: var(--navy); color: var(--cream); line-height: 1.5; }
+    .wrap { max-width: 480px; margin: 0 auto; padding: 24px 24px 40px; display: flex; flex-direction: column; gap: 20px; }
+    .back { color: var(--brass); font-size: 0.9rem; font-weight: 500; text-decoration: none; }
+    .label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.2em; color: var(--brass); text-transform: uppercase; }
+    h1 { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 2.2rem; line-height: 1.1; letter-spacing: 0.02em; text-transform: uppercase; margin: 6px 0 8px; }
+    .sub { font-size: 0.98rem; color: var(--text-muted); }
+    .inside { background: var(--mid-navy); border: 1px solid var(--border); border-radius: 6px; padding: 18px 20px; display: flex; flex-direction: column; gap: 9px; }
+    .inside h2 { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 1rem; letter-spacing: 0.08em; color: var(--brass); text-transform: uppercase; }
+    .inside li { list-style: none; font-size: 0.95rem; padding-left: 24px; position: relative; }
+    .inside li::before { content: "✓"; position: absolute; left: 0; color: var(--brass); font-weight: 700; }
+    form { display: flex; flex-direction: column; gap: 14px; }
+    label { display: flex; flex-direction: column; gap: 6px; font-size: 0.85rem; font-weight: 600; }
+    input { font-family: 'Inter', sans-serif; font-size: 16px; padding: 14px; border: 1.5px solid rgba(245,238,220,0.25); border-radius: 6px; background: var(--mid-navy); color: var(--cream); }
+    input::placeholder { color: rgba(245,238,220,0.45); }
+    input:focus { outline: none; border-color: var(--brass); }
+    button { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 1.2rem; letter-spacing: 0.08em; text-transform: uppercase; background: var(--brass); color: var(--navy); border: none; border-radius: 6px; padding: 17px; cursor: pointer; transition: background 0.2s; }
+    button:hover { background: var(--brass-light); }
+    button:disabled { opacity: 0.6; cursor: wait; }
+    .hp { position: absolute; left: -9999px; }
+    .fine { font-size: 0.78rem; color: var(--text-muted); text-align: center; }
+    .fine a { color: var(--text-muted); }
+    .error { display: none; font-size: 0.88rem; color: #F2A65A; text-align: center; }
+  </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FF6KGWE20C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-FF6KGWE20C');
+</script>
+</head>
+<body>
+<main class="wrap">
+  <a href="/start/" class="back">← Back</a>
+
+  <div>
+    <div class="label">Free guide</div>
+    <h1>The Roach Plan</h1>
+    <p class="sub">What 7 years of apartment pest control taught me about getting rid of roaches for good.</p>
+  </div>
+
+  <div class="inside">
+    <h2>What's inside</h2>
+    <ul>
+      <li>How to tell which roach you've got</li>
+      <li>The mistakes that make it worse</li>
+      <li>Where they actually hide</li>
+      <li>A week-by-week plan</li>
+      <li>The products I'd use, and how</li>
+    </ul>
+  </div>
+
+  <form id="guide-form" novalidate>
+    <label>First name
+      <input type="text" name="fields[name]" placeholder="Your first name" autocomplete="given-name" required>
+    </label>
+    <label>Email
+      <input type="email" name="fields[email]" placeholder="you@email.com" autocomplete="email" required>
+    </label>
+    <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <button type="submit">Send me the guide</button>
+    <p class="error" id="form-error" role="alert"></p>
+    <p class="fine">No spam. Unsubscribe anytime. <a href="/privacy.html">Privacy</a></p>
+  </form>
+</main>
+
+<script>
+  // Paste the "action" URL from your MailerLite embedded form here.
+  // It looks like: https://assets.mailerlite.com/jsonp/XXXXXX/forms/XXXXXXXXXXXX/subscribe
+  var MAILERLITE_URL = '';
+
+  var form = document.getElementById('guide-form');
+  var err = document.getElementById('form-error');
+
+  function showError(msg) { err.textContent = msg; err.style.display = 'block'; }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    err.style.display = 'none';
+    if (form.website.value) return; // bot filled the hidden field
+    var name = form.elements['fields[name]'].value.trim();
+    var email = form.elements['fields[email]'].value.trim();
+    if (!name) return showError('Add your first name so I know who to send it to.');
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return showError('That email doesn’t look right. Mind checking it?');
+    if (!MAILERLITE_URL) return showError('Sign-ups open soon. Check back in a day or two.');
+
+    var btn = form.querySelector('button');
+    btn.disabled = true; btn.textContent = 'Sending…';
+    var data = new FormData();
+    data.append('fields[name]', name);
+    data.append('fields[email]', email);
+    data.append('ml-submit', '1');
+    data.append('anticsrf', 'true');
+
+    fetch(MAILERLITE_URL, { method: 'POST', body: data, mode: 'no-cors' })
+      .then(function () {
+        if (window.gtag) gtag('event', 'generate_lead', { guide: 'roaches' });
+        window.location.href = '/roaches/thanks/';
+      })
+      .catch(function () {
+        btn.disabled = false; btn.textContent = 'Send me the guide';
+        showError('Something went wrong. Try again in a minute.');
+      });
+  });
+</script>
+</body>
+</html>
